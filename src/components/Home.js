@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     // Check if user is authenticated
-    axios.get("http://localhost:3002/auth/user/me", { withCredentials: true })
+    axios.get(`${process.env.REACT_APP_API_URL}/auth/user/me`, { withCredentials: true })
       .then((res) => {
         // backend response shape: { success: true, user: { ... } }
         if (res.data && res.data.success && res.data.user) {
@@ -30,7 +30,7 @@ const Home = () => {
 
   if (!user) {
     // Redirect to landing page if not logged in
-    window.location.href = "http://localhost:3001/login";
+    window.location.href = "/login";
     return null;
   }
 

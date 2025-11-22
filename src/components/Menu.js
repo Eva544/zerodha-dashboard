@@ -23,7 +23,7 @@ const Menu = ({ username }) => {
    const handleLogout = async () => {
   try {
     await axios.post(
-      "http://localhost:3002/auth/logout",
+      `${process.env.REACT_APP_API_URL}/auth/logout`,
       {},
       { withCredentials: true }
     );
