@@ -23,13 +23,13 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3002/auth/login",
+        `${process.env.REACT_APP_API_URL}/auth/login`,
         formData,
         { withCredentials: true }
       );
 
       if (res.data.success) {
-        window.location.href = "http://localhost:3001"; // redirect to dashboard
+        window.location.href = "/login"; // redirect to dashboard
       } else {
         setError(res.data.message || "Invalid email or password");
       }
