@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css"; // ✅ import CSS file
 
 const Login = () => {
+   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -29,7 +32,7 @@ const Login = () => {
       );
 
       if (res.data.success) {
-        window.location.href = "/"; // redirect to dashboard
+        navigate("/");  // redirect to dashboard
       } else {
         setError(res.data.message || "Invalid email or password");
       }
