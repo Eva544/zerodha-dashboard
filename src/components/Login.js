@@ -29,7 +29,7 @@ const Login = () => {
       );
 
       if (res.data.success) {
-        window.location.href = "/login"; // redirect to dashboard
+        window.location.href = "/"; // redirect to dashboard
       } else {
         setError(res.data.message || "Invalid email or password");
       }
