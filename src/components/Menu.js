@@ -30,11 +30,11 @@ const Menu = ({ username }) => {
   } catch (err) {
     console.warn("Logout request failed:", err);
   } finally {
-    navigate("/login");  // ✅ FIXED
+    navigate("/login");  
   }
 };
 
-  const menuClass = "menu"; //for styling
+  const menuClass = "menu"; 
   const activeMenuClass = "menu selected";
 
   return (
